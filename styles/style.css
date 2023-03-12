@@ -1,0 +1,268 @@
+/*############# ALL ###################################*/
+:root {
+  --button: #ff0000;
+  --main-background: #c4c4c4;
+  --background: #e5e5e5;
+  --text: #000;
+  --footer: #000;
+  --text-description: #9c9696;
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  position: absolute;
+  top: 100%;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.warapper {
+  min-width: 1320px;
+  margin: auto;
+}
+
+/*############# BODY ###################################*/
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+/*############# BODY > HEADER ###################################*/
+#header {
+  width: 100%;
+  padding-top: 4rem;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#header .wrapper {
+  display: flex;
+  gap: 8rem;
+
+  margin: 0 auto;
+  max-width: 1320px;
+}
+
+#header .form-div {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+
+#header form div {
+  position: relative;
+}
+
+#header form input {
+  padding: 1.4rem 0.5rem 1.4rem 4.2rem;
+}
+
+#header form img {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+/*############# HEADER > NAVEGAION ###################################*/
+#navegation {
+  display: flex;
+  align-items: center;
+}
+#navegation .logo {
+  margin-right: 11.5rem;
+}
+
+#navegation .nav-menu {
+  display: flex;
+  gap: 9rem;
+}
+
+#navegation .nav-menu a {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 2.4rem;
+  line-height: 28px;
+
+  position: relative;
+}
+
+/*############# BODY > MAIN ###################################*/
+#main {
+  padding-top: calc(8.7rem * 2);
+  position: relative;
+}
+
+#main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--main-background);
+
+  width: 60.5%;
+  height: 100%;
+}
+
+#main .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 14.5rem; */
+
+  width: 1367px;
+  margin: auto;
+}
+
+#main .text {
+  width: 34.2rem;
+  margin: auto;
+}
+
+#main .text h1 {
+  font-weight: 700;
+  font-size: 6rem;
+  line-height: 70px;
+
+  color: var(--text);
+}
+
+#main .text p {
+  margin-top: 1.2rem;
+  font-weight: 700;
+  line-height: 19px;
+
+  color: var(--text-description);
+}
+
+#main .text p span {
+  display: block;
+  margin-top: 4rem;
+
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 47px;
+  color: var(--text);
+}
+
+#main .text button {
+  margin-top: 3rem;
+  padding: 3.3rem 7.7rem;
+  background: var(--button);
+
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 28px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* MAIN >  .photo-section */
+.photo-section {
+  padding-bottom: 4rem;
+}
+
+.photo-section .photo-gallery img + img {
+  margin-left: 3.7rem;
+}
+
+.photo-section .photo-gallery img:nth-of-type(2) {
+  border-bottom: 5px solid var(--button);
+}
+
+/*############# BODY > FOOTER ###################################*/
+
+#footer .wrapper {
+  display: grid;
+  grid-template-columns: 25rem 1fr 43.7rem;
+}
+
+#footer iframe {
+  width: 100%;
+}
+
+#footer .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9rem;
+}
+
+#footer .social-links a {
+  font-weight: 700;
+  color: var(--text);
+
+  font-size: 1.8rem;
+  line-height: 21px;
+
+  position: relative;
+}
+
+#footer .explorer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  background: var(--footer);
+
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+}
+
+/*############# :HOVER ###################################*/
+#navegation .nav-menu a::after,
+#footer .social-links a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 0;
+
+  position: absolute;
+  bottom: -0.3rem;
+
+  transition: width 0.3s;
+}
+
+#navegation .nav-menu a:hover::after,
+#footer .social-links a:hover::after {
+  width: 100%;
+  border: 1px solid var(--text);
+}
